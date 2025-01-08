@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Court Xis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/0cf6585b12.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#pizzas">Pizzas</a></li>
+                <li><a href="#lanches">Lanches</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-options">
+            <span class="rua">Avenida Parque Sao Jorge</span>
+            <div class="cart">
+                <div class="cart">
+                    <div class="cart">
+                        <span id="preco" class="preco-pizza">R$0,00</span>
+                        <i id="verCarrinho" onclick="mostrarCarrinho()" class="fas fa-shopping-cart carrinho-pizza"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </header>
+
+    <div class="banner">
+        <div><img class="image-placeholder" src="img/bannercourtrodizio.png" alt=""></div>
+    </div>
+
+    <section class="restaurant-info">
+        <div class="restaurant-header">
+            <div><img class="profile-picture" src="img/logocirfcular.png" alt=""></div>
+            <div class="restaurant-details">
+                <h1>Court Xis</h1><span class="verified">✔</span>
+            </div>
+        </div>
+        <div class="restaurant-actions">
+            <span class="minimum-order">Pedido mínimo R$ 10,00</span>
+        </div>
+    </section>
+    <div class="titulo" id="pizzas">
+        <h1>Pizzas</h1>
+    </div>
+    <div class="menu-container"><!-- Seta para a esquerda -->
+        <div class="menu-items">
+            <button class="prev-btn">&#10094;</button> <!-- Seta para a esquerda -->
+            <div class="menu-item" data-name="Pizza Espacial" data-price="60.99"
+                onclick="adicionar('Pizza Espacial', 60.99)">
+                <div class="menu-image-placeholder"><img src="img/pizza1.jpg" alt=""></div>
+                <h3>Pizza Espacial</h3>
+                <p>Pizza grande de massa fina com cobertura de queijo mussarela derretido, pepperoni e manjericão.
+                </p>
+                <div class="price">R$ 60,99 <span class="old-price">R$ 79,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Pizza Estelar', 40,99)">
+                <div class="menu-image-placeholder"><img src="img/pizza2.png" alt=""></div>
+                <h3>Pizza Estelar</h3>
+                <p>Pizza média de quatro queijos, acompanhada de uma porção de pão de alho crocante e refrigerante.
+                </p>
+                <div class="price">R$ 40,99 <span class="old-price">R$ 59,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Astronômico', 55,99)">
+                <div class="menu-image-placeholder"><img src="img/pizza3.jpeg" alt=""></div>
+                <h3>Astronômico</h3>
+                <p>Pizza gigante de calabresa com cebola e azeitonas, servida com uma porção de batata frita
+                    temperada</p>
+                <div class="price">R$ 55,99 <span class="old-price">R$ 69,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Astronômico', 55,99)">
+                <div class="menu-image-placeholder"><img src="img/pizza3.jpeg" alt=""></div>
+                <h3>Astronômico</h3>
+                <p>Pizza gigante de calabresa com cebola e azeitonas, servida com uma porção de batata frita
+                    temperada</p>
+                <div class="price">R$ 55,99 <span class="old-price">R$ 69,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Astronômico', 55,99)">
+                <div class="menu-image-placeholder"><img src="img/pizza3.jpeg" alt=""></div>
+                <h3>Astronômico</h3>
+                <p>Pizza gigante de calabresa com cebola e azeitonas, servida com uma porção de batata frita
+                    temperada</p>
+                <div class="price">R$ 55,99 <span class="old-price">R$ 69,90</span></div>
+            </div>
+        </div>
+
+        <button class="next-btn">&#10095;</button> <!-- Seta para a direita -->
+    </div>
+
+    <div class="titulo" id="lanches">
+        <h1>Lanches</h1>
+    </div>
+    <div class="menu-container">
+        <div class="menu-items">
+            <button class="prev-btn">&#10094;</button> <!-- Seta para a esquerda -->
+            <div class="menu-item" onclick="adicionar('Combo Lanche Estelar', 42,99)">
+                <div class="menu-image-placeholder"><img src="img/combo1.jpg" alt=""></div>
+                <h3>Combo Lanche Estelar</h3>
+                <p>Burger artesanal 120g suculento, acompanhado de batatas fritas crocantes e uma bebida</p>
+                <div class="price">R$ 42,99 <span class="old-price">R$ 59,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Combo Fusão Planetária', 51,99)">
+                <div class="menu-image-placeholder"><img src="img/combo3.jpeg""></div>
+                <h3>Combo Fusão Planetária</h3>
+                <p>Dois burgers especiais de 90g cada,queijo, bacon, e molho da casa e  onion rings</p>
+                <div class=" price">R$ 51,99 <span class="old-price">R$ 69,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Combo Energia Cósmica', 32,99)">
+                <div class="menu-image-placeholder"><img src="img/combo2.jpg" alt=""></div>
+                <h3>Combo Energia Cósmica</h3>
+                <p>Um wrap leve de frango grelhado, salada fresca e molho especial, servido com palitos de cenoura</p>
+                <div class="price">R$ 32,99 <span class="old-price">R$ 49,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('Combo Super Nova', 44,99)">
+                <div class="menu-image-placeholder"><img src="img/combo2.webp" alt=""></div>
+                <h3>Combo Super Nova</h3>
+                <p> Uma porção generosa de tiras de frango empanado, acompanhadas de batatas rústicas e limonada</p>
+                <div class="price">R$ 44,99 <span class="old-price">R$ 49,90</span></div>
+            </div>
+            <div class="menu-item" onclick="adicionar('XisCourt', 24,99)">
+                <div class="menu-image-placeholder"><img src="img/lanche1.jpg" alt=""></div>
+                <h3>Xis Court</h3>
+                <p>Combo Lanche Estelar com Burger Artesanal 120g + Batata Frita + bebida </p>
+                <div class="price">R$ 24,99 <span class="old-price">R$ 39,90</span></div>
+            </div>
+            <!-- Repita mais itens -->
+        </div>
+        <button class="next-btn">&#10095;</button> <!-- Seta para a direita -->
+    </div>
+
+
+
+    <div class="titulo" id="bebidas">
+        <h1>Bebidas</h1>
+    </div>
+    <div class="menu-container">
+        <div  class="menu-items bebida">
+            <div class="menu-item" onclick="abrirModal('Suco Natural')">
+                <div class="menu-image-placeholder"><img src="img/suco.jpg" alt="Suco Natural"></div>
+                <h3>Suco Natural</h3>
+                <p>Laranja, Morango e Abacaxi</p>
+                <div class="product-price"">
+                <div class="price">R$ 10,99</div>
+                <span class="old-price">R$ 59,90</span>
+            </div>
+            </div>
+
+            <div class="menu-item" onclick="abrirModal('Refrigerante')">
+                <div class="menu-image-placeholder"><img src="img/refri.jpg" alt="Refrigerante"></div>
+                <h3>Refrigerante Lata</h3>
+                <p>Coca, Sprite e Pepsi</p>
+                <div class="product-price"">
+                <div class="price">R$ 6,00</div><span class="old-price">R$ 9,90</span></div>
+            </div>
+
+            <div class="menu-item" onclick="abrirModal('Chá')">
+                <div class="menu-image-placeholder"><img src="img/chagelado.jpg" alt="Chá Gelado"></div>
+                <h3>Chá</h3>
+                <p>Limao e Berry</p>
+                <div class="product-price"">
+                    <div class="price">R$ 12,99</div> <span class="old-price">R$ 49,90</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="bebidaModal" class="modal">
+        <div class="modal-content">
+            <div id="modalOptions"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert -->
+    <script src="script.js"></script>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h3>Court Xis</h3>
+                <ul>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Franquias</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Descubra</h3>
+                <ul>
+                    <li><a href="#">Nossas Pizzas</a></li>
+                    <li><a href="#">Cardápio</a></li>
+                    <li><a href="#">Promoções</a></li>
+                    <li><a href="#">Blog Court Xis</a></li>
+                </ul>
+            </div>
+            <div class="column social">
+                <h3>Social</h3>
+                <ul>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-text">
+            <p>&copy; 2024 Court Xis - Todos os direitos reservados</p>
+            <p>
+                <a href="#">Termos e condições de uso</a> |
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Dicas de segurança</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <title>Escolher Sabor do Suco</title>
+    
+    <!-- Modal -->
+    <div id="bebidaModal">
+        <div class="modal-content">
+            <h2 id="modalTitle" style="font-size: 24px; color: #333;"></h2>
+            <div id="modalOptions" class="modal-options"></div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

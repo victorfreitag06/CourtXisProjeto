@@ -1,0 +1,1023 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8a10017;
+}
+
+header {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    /* Permite quebrar linha em telas menores */
+}
+
+nav {
+    max-width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #B11925;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 100%;
+    justify-content: center;
+
+}
+
+.user-options span {
+    font-size: 15px;
+
+}
+.user-options .carrinho-badge {
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+}
+
+.preco-pizza {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 8px;
+    background-color: #ff4d4d;
+    border-radius: 20px;
+    border: 1px solid #ffcc00;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.preco-pizza:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+.carrinho-pizza {
+    font-size: 29px;
+    color: #ff4d4d;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.carrinho-pizza:hover {
+    color: orange;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centraliza o carrinho em telas menores */
+}
+
+@media (max-width: 641px) {
+
+    header {
+        display: flex;
+
+    }
+
+    nav ul {
+        gap: 10px;
+        align-items: center;
+
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+        /* Ajusta o tamanho da fonte */
+    }
+
+    .user-options span {
+        font-size: 0.9rem;
+
+    }
+
+    .user-options .rua {
+        font-size: 0rem;
+
+    }
+
+}
+
+
+.banner .image-placeholder {
+    max-height: 375px;
+    width: 100%;
+    margin: 90px 0 0 0;
+}
+
+.restaurant-info {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.restaurant-header {
+    display: flex;
+    gap: px;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-picture {
+    width: 100%;
+    max-height: 80px;
+    border-radius: 50%;
+}
+
+.restaurant-details h1,
+span {
+    font-size: 20px;
+}
+
+.restaurant-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.verified {
+    color: blue;
+    font-size: 18px;
+    margin-left: 5 px;
+}
+
+.restaurant-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.restaurant-actions a {
+    color: red;
+    text-decoration: none;
+    font-weight: b  ;
+}
+
+.minimum-order {
+    color: gray;
+    font-size: 15px;
+}
+
+.menu {
+    padding: 20px;
+}
+
+.menu h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    display: flex;
+    padding: 10px;
+    overflow-x: auto;
+    /* Habilita o scroll horizontal */
+    scroll-behavior: smooth;
+    /* Rolagem suave */
+}
+.bebida{
+    justify-content: center ;
+}
+
+.menu-items::-webkit-scrollbar {
+    display: none;
+    /* Esconde barra no Chrome, Safari e Edge */
+}
+
+.menu-item {
+    flex-shrink: 0;
+    /* Evita que os itens encolham */
+    flex: 0 0 auto;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 0.1px #f57b004c;
+    /* Sombra mais perceptível */
+    border: 1px #f57b0059 solid;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.menu-item h3 {
+    font-size: 18px;
+}
+
+.menu-item p {
+    font-size: 15px;
+}
+
+.menu-item h3,
+p,
+.price,
+.old-price {
+    margin: 10px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    /* Aumenta o item quando hover */
+}
+
+.menu-image-placeholder img {
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+
+}
+
+.titulo h1 {
+    margin: 25px 90px;
+    margin: 45px;
+    font-size: 30px;
+}
+
+.menu-items {
+    display: flex;
+    overflow-x: hidden;
+    width: 90%;
+    /* Controla o tamanho da área visível dos itens */
+}
+
+.prev-btn,
+.next-btn {
+    background-color: #f57b0015;
+    /* Amarelo brilhante inspirado em mostarda */
+    border: none;
+    /* Sem borda */
+    color: #f57c00;
+    /* Vermelho escuro para contraste */
+    font-size: 25px;
+    /* Tamanho do texto */
+    cursor: pointer;
+    /* Cursor indicando clique */
+    position: absolute;
+    top: 50%;
+    /* Alinha verticalmente ao centro */
+    transform: translateY(-50%);
+    margin: 0px 10px;
+    padding: 10px 20px;
+    /* Adiciona espaçamento interno */
+    border-radius: 50%;
+    /* Formato circular */
+    box-shadow: 0px 0px 15px 0.1px #f57b0048;
+    /* Sombra mais perceptível */
+    transition: all 0.3s ease;
+    /* Suavidade para todas as alterações */
+    border: 1px #f57b008c solid;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: #faa307;
+    /* Tom laranja que remete a queijo derretido */
+    color: #370617;
+    /* Vermelho vinho para contraste */
+    transform: translateY(-50%) scale(1.15);
+    /* Aumenta um pouco o tamanho */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    /* Realce da sombra */
+}
+
+.prev-btn:active,
+.next-btn:active {
+    background-color: #e85d04;
+    /* Laranja mais escuro para feedback de clique */
+    transform: translateY(-50%) scale(0.9);
+    /* Leve redução ao clicar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Sombra reduzida */
+}
+
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.price {
+    font-size: 24px;
+    margin: 10px;
+    font-weight: bold;
+    color: #28a745;
+    /* Cor verde para o preço atual */
+}
+
+.product-price {
+    display: flex;
+}
+
+.old-price {
+    font-size: 18px;
+    font-weight: normal;
+    color: #888;
+    /* Cor cinza para o preço antigo */
+    text-decoration: line-through;
+    /* Riscado para o preço antigo */
+    margin: 14px 10px;
+    /* Espaçamento entre o preço atual e o antigo */
+}
+
+@media (max-width: 1185px) {
+
+    .menu-item {
+        width: 350px;
+    }
+    .prev-btn,
+    .next-btn {
+        font-size: 0px;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        top: 0;
+    }
+    .bebida{
+        justify-content: start ;
+    }
+}
+
+@media (max-width: 985px) {
+
+    .menu-item {
+        width: 300px;
+        margin: 5px;
+    }
+
+    .menu-image-placeholder img {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 2px;
+
+    }
+
+    .menu-item p {
+        font-size: 12px;
+
+    }
+    
+
+    .menu-item h3 {
+        font-size: 15x;
+    }
+
+    .price {
+        font-size: 22px;
+        margin: 10px;
+    }
+
+    .old-price {
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 775px) {
+
+    .menu-item {
+        width: 230px;
+        margin: 5px;
+    }
+
+    .menu-image-placeholder img {
+        width: 100%;
+        height: 140px;
+        margin-bottom: 2px;
+
+    }
+
+    .menu-item p {
+        font-size: 11x;
+
+    }
+
+    .menu-item h3 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin: 10px;
+    }
+
+  .old-price {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 625px) {
+
+    .menu-item {
+        width: 200px;
+        margin: 5px;
+    }
+
+    .banner .image-placeholder {
+        max-height: 375px;
+        width: 100%;
+        margin: 68px 0 0 0;
+    }
+
+    .menu-item p {
+        font-size: 11px;
+
+    }
+
+    .menu-item h3 {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 15px;
+        margin: 10px;
+    }
+
+ .old-price {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .titulo h1 {
+        margin: 25px 30px;
+        font-size: 20px;
+    }
+
+    .profile-picture {
+        height: 60px;
+        width: 60px;
+    }
+
+    .menu-item {
+        width: 168px;
+        margin: 1px;
+    }
+
+    .menu-image-placeholder img {
+        width: 100%;
+        height: 80px;
+        margin-bottom: 2px;
+
+    }
+
+    .menu-item p {
+        font-size: 10px;
+
+    }
+
+    .menu-item h3 {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 15px;
+        margin: 10px;
+    }
+
+.old-price {
+        font-size: 12 qpx;
+    }
+    
+   
+}
+
+@media (max-width: 450px) {
+
+    header {
+        display: flex;
+
+    }
+
+    nav ul {
+        gap: 10px;
+        align-items: center;
+
+    }
+
+    nav ul li a {
+        font-size: 0.72rem;
+        /* Ajusta o tamanho da fonte */
+    }
+
+    .user-options .preco-pizza {
+        font-size: 0.62rem;
+
+    }
+
+    .minimum-order {
+        font-size: 8px;
+        margin-bottom: 5px;
+    }
+
+    .menu-item {
+        width: 200px;
+    }
+
+    .menu-items-pizza-bebida {
+        width: 75%;
+        gap: 0;
+    }
+
+    .menu-items-pizza-bebida .menu-item {
+        width: 122px;
+        margin: 5px;
+        gap: 0;
+    }
+
+    .menu-items-pizza-bebida .menu-item img {
+        width: 100%;
+        height: 60px;
+    }
+
+    .menu-image-placeholder img {
+        width: 100%;
+        height: 80px;
+        margin: 0;
+        padding: 0
+    }
+
+    .menu-item p {
+        font-size: 13.3px;
+
+    }
+
+    .menu-item h3 {
+        font-size: 15px;
+    }
+
+    .price {
+        font-size: 17px;
+    }
+
+    .product-price {
+        display: flex;
+        flex-direction: column;
+        /* Faz o preço antigo ir para baixo */
+        align-items: flex-start;
+    }
+
+    .old-price {
+        font-size: 12px;
+        margin: 0px 0px 10px 10px;
+    }
+
+    .swal-mostrar-carrinho {
+        width: 1000px;
+    }
+
+    .swal2-html-container {
+        padding: 8px;
+    }
+   
+    .user-options .carrinho-badge {
+        font-size:10px;
+        width: 15px;
+        height: 15px;
+      }
+      
+      .user-options span {
+        font-size: 0.7rem;
+    }
+
+
+    .menu-items {
+        width: 90%;
+        /* Controla o tamanho da área visível dos itens */
+    }
+
+    .carrinho-pizza {
+        font-size: 19px;
+    }
+}
+
+
+footer {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 100px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 80px;
+
+}
+
+footer .column {
+    flex: 1;
+}
+
+footer .column h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+footer .column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer .column ul li {
+    margin-bottom: 8px;
+}
+
+footer .column ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer .column ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .social ul {
+    display: flex;
+    gap: 10px;
+}
+
+footer .social ul {
+    gap: 25px;
+    font-size: 30px;
+}
+
+footer .social ul li a:hover {
+    color: #f1c40f;
+}
+
+footer .bottom-text {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+}
+
+footer .bottom-text a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .bottom-text a:hover {
+    text-decoration: underline;
+}
+
+
+/*swal*/
+.swal-mostrar-carrinho {
+    width: 500px;
+    gap: 20px;
+    padding: 2px;
+}
+
+.swal-btn-confirm {
+    background-color: #f57c00;
+    /* Cor do fundo do botão confirmar */
+    color: #fff;
+    /* Cor do texto */
+    border-radius: 5px;
+    /* Arredondar os cantos do botão */
+    padding: 10px 20px;
+    /* Aumenta o tamanho do botão */
+    font-weight: bold;
+    /* Deixa o texto mais forte */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    margin: 15px 6px;
+}
+
+.swal-btn-cancel {
+    background-color: #e63946;
+    /* Cor do fundo do botão cancelar */
+    color: #fff;
+    /* Cor do texto */
+    border-radius: 5px;
+    /* Arredondar os cantos do botão */
+    padding: 10px 20px;
+    /* Aumenta o tamanho do botão */
+    font-weight: bold;
+    /* Deixa o texto mais forte */
+    font-size: 16px;
+    /* Tamanho da fonte */
+
+
+}
+
+.swal-btn-confirm:hover {
+    background-color: #ff8c00;
+    /* Cor de fundo ao passar o mouse no botão confirmar */
+}
+
+.swal-btn-cancel:hover {
+    background-color: #d62940;
+    /* Cor de fundo ao passar o mouse no botão cancelar */
+}
+
+
+
+.swal-custom-popup {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+.menu-items {
+    display: flex;
+    overflow-x: auto;
+    /* Permitir rolagem horizontal */
+    scroll-behavior: smooth;
+    /* Rolagem suave */
+    gap: 20px;
+    /* Espaçamento entre itens */
+}
+
+.menu-item {
+    flex-shrink: 0;
+    /* Evitar que os itens diminuam */
+
+}
+
+
+
+#bebidaModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff5e1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #ffffff23;
+    box-shadow: 0 4px 10px rgba(10, 1, 1, 0.082);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    border: 1px rgba(0, 0, 0, 0.116) solid;
+
+    
+}
+
+.card img {
+    width: 80px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Personalização do popup */
+.swal-custom-popup {
+    background-color: #faf6eb; /* Fundo com tom quente, inspirado em lanches */
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Estilo divertido e casual */
+   
+  }
+
+ 
+  /* Estilo do título */
+  .swal2-title {
+    font-size: 0rem;
+    font-weight: bold;
+    color: #f57c00; /* Vermelho quente, remetendo a molho ou ketchup */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sutil sombra no texto */
+  }
+  
+  /* Estilo dos botões */
+  .swal2-confirm {
+    background-color: #f57c00;
+    color: white !important; /* Texto branco */
+    padding: 10px 25px !important;
+    border-radius: 10px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .swal2-cancel {
+    background-color: #d62940;
+    color: #f0f0f0 !important; /* Texto escuro */
+    padding: 10px 25px !important;
+    border-radius: 10px !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+  /* Estilo do formulário */
+  .form-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os campos */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ffc92897;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff3e000; /* Fundo levemente bege */
+  }
+  .form-control-input-ex{
+    width: 0;
+    border: 0;
+  }
+  
+  .form-control:focus {
+    border-color: #d84315;
+    box-shadow: 0 0 5px rgba(216, 67, 21, 0.5);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .swal-custom-popup {
+      width: 90%; /* Adapta a largura do modal em telas menores */
+    }
+    .swal2-title {
+      font-size: 1.4rem; /* Reduz o tamanho do título */
+    }
+  }
+  
+  .payment-options {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .payment-btn {
+    padding: 10px 25px;
+    border: none;
+    border: 1px solid #ffca28;
+    cursor: pointer;
+    font-weight: bold;
+    color: #e85d04;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .payment-btn:hover {
+    background-color: #ffc9282f;
+  }
+  .payment-btn:focus {
+    background-color: #d84315;
+    color:white;
+  }
+  
+  .payment-btn.selecionado {
+    background-color: #4CAF50; /* Verde para indicar seleção */
+    color: white;
+  }
+  
+  .carrinho-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f57c00;
+    color: white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
